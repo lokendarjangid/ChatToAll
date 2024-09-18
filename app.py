@@ -1,11 +1,11 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, render_template
 import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return send_from_directory('public', 'index.html')
+    return render_template('index.html')
 
 @app.route('/chat', methods=['POST'])
 def add_message():
